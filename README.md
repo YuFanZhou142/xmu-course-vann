@@ -58,27 +58,30 @@ In the main experiment script, the image is processed stage by stage and compare
 
 ## Repository Structure
 
-The repository keeps the original folder naming from the assignment submission.
+The repository has been reorganized so that source code, images, and saved data are separated instead of being mixed in one folder.
 
 | Path | Description |
 | --- | --- |
 | `README.md` | Project overview |
 | `vann系统建模与仿真设计.docx` | Course report describing background, design, and analysis |
-| `medical_photo_transtion_system/1/main_system.m` | Quick demonstration script |
-| `medical_photo_transtion_system/1/main_analysis.m` | Full analysis pipeline with metrics and visualizations |
-| `medical_photo_transtion_system/1/morph_denoise.m` | Core adaptive denoising algorithm |
-| `medical_photo_transtion_system/1/wavelet_compress.m` | Wavelet decomposition and coefficient thresholding |
-| `medical_photo_transtion_system/1/wavelet_reconstruct.m` | Wavelet reconstruction |
-| `medical_photo_transtion_system/1/simulate_channel.m` | Channel noise/distortion simulation |
-| `medical_photo_transtion_system/1/evaluate_metrics.m` | PSNR, SSIM, MSE, MAE evaluation |
-| `medical_photo_transtion_system/1/visual_compare.m` | Histogram, heatmap, edge, and intensity visualization |
-| `medical_photo_transtion_system/1/visualization.m` | Additional comparison figure helper |
-| `medical_photo_transtion_system/1/evaluate_compression_ratio.m` | Approximate compression ratio estimation |
-| `medical_photo_transtion_system/1/morphwavelet_gui.m` | Simple GUI demo |
-| `medical_photo_transtion_system/1/medical_photo.png` | Sample image asset |
-| `medical_photo_transtion_system/1/medical_photo_2.png` | Main medical image used by the scripts |
-| `medical_photo_transtion_system/1/Xiamen_University.jpg` | Image used by the GUI demo |
-| `medical_photo_transtion_system/1/wavelet_compressed.mat` | Saved wavelet-related data asset |
+| `medical_photo_transtion_system/code/` | MATLAB source code |
+| `medical_photo_transtion_system/images/` | Input and demo image assets |
+| `medical_photo_transtion_system/data/` | Saved data assets |
+| `medical_photo_transtion_system/code/main_system.m` | Quick demonstration script |
+| `medical_photo_transtion_system/code/main_analysis.m` | Full analysis pipeline with metrics and visualizations |
+| `medical_photo_transtion_system/code/morph_denoise.m` | Core adaptive denoising algorithm |
+| `medical_photo_transtion_system/code/wavelet_compress.m` | Wavelet decomposition and coefficient thresholding |
+| `medical_photo_transtion_system/code/wavelet_reconstruct.m` | Wavelet reconstruction |
+| `medical_photo_transtion_system/code/simulate_channel.m` | Channel noise/distortion simulation |
+| `medical_photo_transtion_system/code/evaluate_metrics.m` | PSNR, SSIM, MSE, MAE evaluation |
+| `medical_photo_transtion_system/code/visual_compare.m` | Histogram, heatmap, edge, and intensity visualization |
+| `medical_photo_transtion_system/code/visualization.m` | Additional comparison figure helper |
+| `medical_photo_transtion_system/code/evaluate_compression_ratio.m` | Approximate compression ratio estimation |
+| `medical_photo_transtion_system/code/morphwavelet_gui.m` | Simple GUI demo |
+| `medical_photo_transtion_system/images/medical_photo.png` | Sample image asset |
+| `medical_photo_transtion_system/images/medical_photo_2.png` | Main medical image used by the scripts |
+| `medical_photo_transtion_system/images/Xiamen_University.jpg` | Image used by the GUI demo |
+| `medical_photo_transtion_system/data/wavelet_compressed.mat` | Saved wavelet-related data asset |
 
 ## Core Scripts
 
@@ -125,7 +128,7 @@ This file provides a simple GUI interface that lets the user click buttons and d
 - denoised image,
 - compressed image.
 
-Note: the GUI currently uses `Xiamen_University.jpg` as its sample input, while the main analysis scripts use `medical_photo_2.png`.
+Note: the GUI currently uses `images/Xiamen_University.jpg` as its sample input, while the main analysis scripts use `images/medical_photo_2.png`.
 
 ## Methodology
 
@@ -229,7 +232,7 @@ The project uses functions such as:
 Open MATLAB and change the working directory to:
 
 ```matlab
-medical_photo_transtion_system/1
+medical_photo_transtion_system/code
 ```
 
 Then run one of the following scripts:
@@ -254,9 +257,10 @@ morphwavelet_gui
 
 Important:
 
-- Run the scripts from the folder above, because the image files are loaded using relative paths.
-- The main experimental scripts use `medical_photo_2.png`.
-- The GUI uses `Xiamen_University.jpg`.
+- The project now separates source code and image assets into different folders.
+- The scripts resolve image paths from their own location, so the repository structure is cleaner and less fragile than before.
+- The main experimental scripts use `images/medical_photo_2.png`.
+- The GUI uses `images/Xiamen_University.jpg`.
 
 ## Expected Outputs
 

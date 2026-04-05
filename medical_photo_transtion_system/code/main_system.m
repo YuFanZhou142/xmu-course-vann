@@ -1,7 +1,12 @@
 clc; clear; close all;
 
+scriptDir = fileparts(mfilename('fullpath'));
+addpath(scriptDir);
+projectDir = fileparts(scriptDir);
+imageDir = fullfile(projectDir, 'images');
+
 % 原图
-I = im2double(imread('medical_photo_2.png'));
+I = im2double(imread(fullfile(imageDir, 'medical_photo_2.png')));
 
 % 加噪
 noisy = I;

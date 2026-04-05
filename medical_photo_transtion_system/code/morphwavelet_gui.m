@@ -1,9 +1,12 @@
 function morphwavelet_gui()
+    scriptDir = fileparts(mfilename('fullpath'));
+    imageDir = fullfile(fileparts(scriptDir), 'images');
+
     % 创建界面窗口
     fig = uifigure('Name', '图像去噪与小波压缩演示系统', 'Position', [200 100 1000 600], 'Color', [1 1 1]);
 
     % 加载原始图像
-    I = imread('Xiamen_University.jpg');
+    I = imread(fullfile(imageDir, 'Xiamen_University.jpg'));
     I = im2double(I);
 
     % 图像预处理
